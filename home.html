@@ -1,0 +1,83 @@
+<html>
+    <title>Delay</title>
+    
+    <body>
+        <h1>Please enter your flight details</h1>
+        
+        <form action = "" method="POST">
+        {{ form.hidden_tag() }}
+         <p>
+            {{ form.CRS_ELAPSED_TIME.label }}<br>
+            {{ form.CRS_ELAPSED_TIME(size=32) }}
+            {% for error in form.CRS_ELAPSED_TIME.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.Airline.label }}<br>
+            {{ form.Airline(size=32) }}
+            {% for error in form.Airline.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.OrigAirport.label }}<br>
+            {{ form.OrigAirport(size=32) }}
+            {% for error in form.OrigAirport.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.DestgAirport.label }}<br>
+            {{ form.DestgAirport(size=32) }}
+            {% for error in form.DestgAirport.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.TimeDep.label }}<br>
+            {{ form.TimeDep(size=32) }}
+            {% for error in form.TimeDep.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.TimeArr.label }}<br>
+            {{ form.TimeArr(size=32) }}
+            {% for error in form.TimeArr.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.Distance.label }}<br>
+            {{ form.Distance }}
+        </p>
+        <p>
+            {{ form.Month.label }}<br>
+            {{ form.Month }}
+        </p>
+        <p>
+            {{ form.Week.label }}<br>
+            {{ form.Week }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+
+        
+        
+        </form>
+        
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        
+    </body>
+    
+</html>
